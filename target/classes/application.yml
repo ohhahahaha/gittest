@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka
+  freemarker:
+    prefer-file-system-access: false
+server:
+  port: 9000
+eureka:
+  client:
+    #是否将自己注册到eureka中
+    register-with-eureka: false
+    #是否从eureka中获取信息
+    fetch-registry: false
+    service-url:
+      defaultZone: http://0.0.0.0:${server.port}/eureka/
+  server:
+    enable-self-preservation: false # 关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 每隔5秒进行一次服务列表清理
